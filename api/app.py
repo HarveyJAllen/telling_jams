@@ -11,5 +11,4 @@ def index():
     if request.method == "GET":
         # with open("./api/static/messages.txt", "r+") as file:
         #     messages = file.readlines()
-        #return render_template("index.html", messages=messages)
-        return "Hello"
+        return render_template("index.html", messages=messages)
