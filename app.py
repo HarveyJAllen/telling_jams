@@ -4,7 +4,4 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    if request.method == "GET":
-        return "aaaaaa"
-    if request.method == "POST":
-        return "eeeeee"
+    return render_template("index.html")
