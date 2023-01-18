@@ -8,6 +8,28 @@
     <title>Home</title>
 </head>
 <body>
-    <div>Hello</div>
+    <div class="navbar">
+        <div>Change your Name</div>
+    </div>
+    <div>
+        <h1>
+            Send a message to Jams!
+        </h1>
+    </div>
+    <div>
+        <form action="/" method="post">
+            <input type="text" id="message" name="message">
+            <input type="submit">
+        </form>
+    </div>
+    <hr>
+    <div>
+        <h2>Jams' messages (someone's popular)</h2>
+        {% if messages %}
+            {% for x in messages %}
+                <p>{{x}}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
 </body>
 </html>
