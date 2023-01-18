@@ -1,5 +1,6 @@
 from flask import Flask, render_template, redirect, request
-from os.path import join
+from os.path import dirname, abspath, join
+dir = dirname(abspath(__file__))
 
 app = Flask(__name__)
 
@@ -11,6 +12,6 @@ def index():
             outfile.writelines(message+"\n")
         return redirect("/")
     if request.method == "GET":
-        with open(join('data', 'text.txt'), "r+") as file:
+        with open(join(dir, '..', 'data', 'text.txt'), "r+") as file:
             messages = file.readlines()
         return render_template("index.html")
