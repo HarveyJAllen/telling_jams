@@ -12,9 +12,6 @@ def index():
             outfile.writelines(message+"\n")
         return redirect("/")
     if request.method == "GET":
-        f = open("textfile.txt", "w")
-        f.close()
-        #with open(join(dir, '..', 'data', 'text.txt'), "r+") as file:
-            #messages = file.readlines()
-        #messages = "Hello"
+        with open(join(dir, '..', 'data', 'text.txt'), "r+") as file:
+            messages = file.readlines()
         return render_template("index.html", messages="Hello")

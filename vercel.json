@@ -1,8 +1,10 @@
 {
     "builds": [
       {
-        "src": "api/app.py",
-        "use": "@vercel/python"
+        "src": "api/app.py", "use": "@vercel/python"
+      },
+      {
+        "src": "data/text.txt", "use": "@vercel/static"
       }
     ],
     "routes": [
