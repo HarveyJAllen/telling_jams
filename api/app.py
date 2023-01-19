@@ -8,16 +8,10 @@ app = Flask(__name__)
 def index():
     if request.method == "POST":
         message = request.form.get("message")
-        with open("data/text.txt", "a") as outfile:
+        with open("/tmp/data/text.txt", "a") as outfile:
             outfile.writelines(message+"\n")
         return redirect("/")
     if request.method == "GET":
-        f = open("text.txt", "w")
-        f.write("Hello")
-        f.close()
-        f = open("text.txt", "r")
-        print(f.read())
-        f.close()
-        # with open("data/text.txt", "r+") as file:
-        #     messages = file.readlines()
+        with open("/tmp/text.txt", "r+") as file:
+            messages = file.readlines()
         return render_template("index.html", messages="Hello")
