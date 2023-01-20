@@ -15,3 +15,7 @@ def index():
         with open("data/text.txt", "r") as file:
             messages = file.readlines()
         return render_template("index.html", messages=messages)
+
+@app.route("/jamsroute", methods=["GET", "POST"])
+def jams_data():
+    return "Morning"
