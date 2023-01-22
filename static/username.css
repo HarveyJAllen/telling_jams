@@ -10,54 +10,14 @@ body {
     color: #20C20E;
 }
 
-p {
-    margin: 0px;
-}
-
-.message-area::-webkit-scrollbar {
-    width: 1em;
-}
-   
-.message-area::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-   
-.message-area::-webkit-scrollbar-thumb {
-    background-color: #555;
-    outline: 1px solid #444;
-    border-radius: 10px;
-}
-
-h1  {
-    margin: 0px;
-}
-
-.mainapp {
+.form {
     position: absolute;
     top: 50px; left: 50px; right: 50px; bottom: 50px;
     outline: 2px solid #20C20E;
     padding: 10px;
 }
 
-.header {
-    outline: 2px solid #20C20E;
-    padding: 1px;
-    margin-bottom: 10px;
-    text-align: left;
-    overflow:auto;
-}
-
-.message-area {
-    outline: 2px solid #20C20E;
-    position: fixed;
-    bottom: 86.5px; top: 110px; right: 60px; left: 60px;
-    margin-bottom: 10px;
-    overflow: auto;
-    max-height: 85%;
-    text-align: left;
-}
-
-.send-message{
+.username{
     padding: 0px;
     border: 0px;
     text-align: left;
@@ -67,11 +27,11 @@ h1  {
     bottom: 10px;
     outline: 2px solid #20C20E;
     background-color: black;
-    color: white;
+    color: #20C20E;
     height: 25px;
 }
 
-.submit-message {
+.go {
     padding: 0px;
     border: 0px;
     position: absolute;
@@ -83,4 +43,8 @@ h1  {
     height: 25px;
     outline: 2px solid #20C20E;
     border-radius: 10px;
+}
+
+.lock {
+    margin-top: 45px;
 }

@@ -5,31 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/index.css">
-    <title>Home</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
+    <link rel="stylesheet" href="">
+    <title>Telling Jams</title>
+    <script>
+        $(document).ready(function(){
+            $("message-area").scrollTop($("message-area").scrollHeight);
+        })
+    </script>
 </head>
 <body>
-    <div class="navbar">
-        <div>Change your Name</div>
-    </div>
-    <div>
-        <h1>
-            Send a message to Jams!
-        </h1>
-    </div>
-    <div>
+    <div class="mainapp">
+        <div class="header">
+            <h1>TELLING_JAMS - A horrific idea</h1>
+        </div>
+        <div class="message-area">
+            {% if messages %}
+                {% for x in messages %}
+                    <!-- <p>&lt;username&gt;: {{x}}</p> -->
+                    <p>{{x}}</p>
+                {% endfor %}
+            {% endif %}
+        </div>
         <form action="/" method="post">
-            <input type="text" id="message" name="message">
-            <input type="submit">
+            <input type="text" name="message" id="message" class="send-message" placeholder="Enter your message" autocomplete="off" autofocus>
+            <input type="submit" value="SEND" class="submit-message">
         </form>
-    </div>
-    <hr>
-    <div>
-        <h2>Jams' messages (someone's popular)</h2>
-        {% if messages %}
-            {% for x in messages %}
-                <p>{{x}}</p>
-            {% endfor %}
-        {% endif %}
     </div>
 </body>
 </html>
