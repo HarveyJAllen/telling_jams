@@ -35,8 +35,8 @@ def jams():
     if request.method == "GET":
         return "jams" #render_template("username.html")
     if request.method == "POST":
-        jamsdata = request.form.get("somedata")
-        return redirect("/")
+        #jamsdata = request.form.get("somedata")
+        return "jams2" #redirect("/")
 
 @app.route("/ai")
 def ai():
