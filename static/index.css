@@ -23,8 +23,8 @@ p {
 }
    
 .message-area::-webkit-scrollbar-thumb {
-    background-color: #555;
-    outline: 1px solid #444;
+    background-color: #20C20E;
+    outline: 1px solid #20C20E;
     border-radius: 10px;
 }
 
@@ -67,9 +67,9 @@ h1  {
     bottom: 10px;
     outline: 2px solid #20C20E;
     background-color: black;
-    color: white;
+    color: #20C20E;
     height: 25px;
-}
+}   
 
 .submit-message {
     padding: 0px;
