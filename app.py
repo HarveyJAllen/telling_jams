@@ -33,7 +33,10 @@ def username():
 @app.route("/jamsroute", methods=["POST", "GET"])
 def jams():
     if request.method == "GET":
-        return "jams33" #render_template("username.html")
+        with open("data/messages.txt", "r") as file:
+            messages = file.readlines()
+            return messages
+        #return "jams33" #render_template("username.html")
     if request.method == "POST":
         #jamsdata = request.form.get("somedata")
         return "jams243" #redirect("/")
