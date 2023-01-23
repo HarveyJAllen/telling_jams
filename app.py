@@ -33,7 +33,7 @@ def username():
 @app.route("/jamsroute", methods=["POST", "GET"])
 def jams():
     if request.method == "GET":
-        return render_template("username.html")
+        return "jams" #render_template("username.html")
     if request.method == "POST":
         jamsdata = request.form.get("somedata")
         return redirect("/")
