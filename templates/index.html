@@ -9,17 +9,26 @@
     <link rel="stylesheet" href="">
     <title>Telling Jams</title>
     <script>
-        $(document).ready(function(){
-            $("message-area").scrollTop($("message-area").scrollHeight);
-        })
+        const element = document.getElementById("myBtn");
+        element.addEventListener("click", myFunction);
+
+        function myFunction() {
+            console.log("Hel")
+            var objDiv = document.getElementById("message-area");
+            console.log(objDiv)
+            objDiv.scrollTop = objDiv.scrollHeight;
+        }
     </script>
 </head>
-<body>
+<body>  
+    <div>
+        <button i="myBtn">Hey</button>
+    </div>
     <div class="mainapp">
         <div class="header">
             <h1>TELLING_JAMS - a horrific idea</h1>
         </div>
-        <div class="message-area">
+        <div class="message-area" id="message-area">
             {% if messages %}
                 {% for x in messages %}
                     <!-- <p>&lt;username&gt;: {{x}}</p> -->
