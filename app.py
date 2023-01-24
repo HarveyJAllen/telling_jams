@@ -35,7 +35,7 @@ def jams():
     if request.method == "GET":
         with open("data/messages.txt", "r") as file:
             messages = file.readlines()
-            return messages
+        return messages
         #return "jams33" #render_template("username.html")
     if request.method == "POST":
         #jamsdata = request.form.get("somedata")

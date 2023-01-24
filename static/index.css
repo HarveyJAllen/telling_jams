@@ -57,6 +57,10 @@ h1  {
     text-align: left;
 }
 
+p {
+    max-width: 100ch;
+}
+
 .send-message{
     padding: 0px;
     border: 0px;
