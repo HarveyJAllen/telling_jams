@@ -49,5 +49,4 @@ def jams():
 
 @app.route("/ai")
 def ai():
-    print("Hello, world")
     return render_template("ai.html")
