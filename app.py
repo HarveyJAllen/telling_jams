@@ -13,6 +13,12 @@ def index():
         return redirect("/username")
     if request.method == "POST":    
         message = request.form.get("message")
+        if message == "muppet":
+            return render_template("muppet.html")
+        if message == "rick roll":
+            with open("data/messages.txt", "r") as file:
+                messages = file.readlines()
+            return render_template("index.html", messages=messages, rickroll=True)
         with open("data/messages.txt", "a+") as outfile:
             name = session.get("name")
             outfile.writelines(f"<{name}>: {message}\n")

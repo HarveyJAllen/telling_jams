@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            var interval = setInterval(myURL, 6500)
+        })
+
+        function myURL() {
+         document.location.href = '/';
+         clearInterval(interval);
+      }
+    </script>
+    <title>Document</title>
+    <style>
+        html {
+    background: #000;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    }
+
+    body {
+        padding: 0px;
+        margin: 0px;
+    }
+    </style>
+</head>
+<body>
+    <iframe style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%" src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=1&start=170" title="Bohemian Rhapsody | Muppet Music Video | The Muppets" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</body>
+</html>

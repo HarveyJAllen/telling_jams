@@ -8,21 +8,18 @@
     <link rel="shortcut icon" type="image/x-icon" href="/static/favicon.ico" />
     <link rel="stylesheet" href="">
     <title>Telling Jams</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script>
-        const element = document.getElementById("myBtn");
-        element.addEventListener("click", myFunction);
-
-        function myFunction() {
-            console.log("Hel")
-            var objDiv = document.getElementById("message-area");
-            console.log(objDiv)
-            objDiv.scrollTop = objDiv.scrollHeight;
-        }
+        $(document).ready(function(){
+            $(".message-area").scrollTop($(".message-area")[0].scrollHeight)
+        })
     </script>
 </head>
 <body>  
-    <div>
-        <button i="myBtn">Hey</button>
+    {% if rickroll %}
+        <iframe class="rickroll" style="position:fixed; top:0; left:0; bottom:0; right:0; width:100%; height:100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&cc_load_policy=1" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    {% endif %}
+        <div>
     </div>
     <div class="mainapp">
         <div class="header">
@@ -37,7 +34,7 @@
             {% endif %}
         </div>
         <form action="/" method="post">
-            <input type="text" name="message" id="message" class="send-message" placeholder="Tell jams" autocomplete="off" autofocus maxlength="10">
+            <input type="text" name="message" id="message" class="send-message" placeholder="Tell jams" autocomplete="off" autofocus maxlength="10ch">
             <input type="submit" value="SEND" class="submit-message">
         </form>
     </div>
