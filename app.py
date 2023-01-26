@@ -50,3 +50,6 @@ def jams():
 @app.route("/ai")
 def ai():
     return render_template("ai.html")
+
+if __name__ == "__main__":
+    app.run(debug=True, host="0.0.0.0", port="80")
