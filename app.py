@@ -13,9 +13,9 @@ def index():
         return redirect("/username")
     if request.method == "POST":    
         message = request.form.get("message")
-        if message == "muppet":
+        if message.lower() in ["muppet", "muppet ", ]:
             return render_template("muppet.html")
-        if message == "rick roll":
+        if message.lower() in ["rick roll", "rick roll ", "rickroll", "rickroll "]:
             with open("data/messages.txt", "r") as file:
                 messages = file.readlines()
             return render_template("index.html", messages=messages, rickroll=True)
