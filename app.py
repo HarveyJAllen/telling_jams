@@ -26,6 +26,7 @@ def index():
     if request.method == "GET":
         with open("data/messages.txt", "r") as file:
             messages = file.readlines()
+        return render_template("foxypink.html")
         return render_template("index.html", messages=messages)
 
 @app.route("/username", methods=["POST", "GET"])
