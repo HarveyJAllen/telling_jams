@@ -55,7 +55,7 @@ def ai():
     return render_template("ai.html")
 
 host = "150.230.127.139"
-port = 5000
+port = 3390
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.bind((host, port))
