@@ -1,5 +1,7 @@
 from flask import Flask, render_template, redirect, request, session
 from flask_session import Session
+import threading
+import socket
 
 app = Flask(__name__)
 
@@ -52,5 +54,54 @@ def jams():
 def ai():
     return render_template("ai.html")
 
+host = "150.230.127.139"
+port = 5000
+
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind((host, port))
+server.listen()
+clients = []
+aliases = []
+msglist = []
+
+def broadcast(msg):
+    msglist.append((msg + '\n').encode('utf-8'))
+    for client in clients:
+        client.send(msg.encode('utf-8'))
+
+def handle_client(client):
+    alias = client.recv(14).decode('utf-8')
+    aliases.append(alias)
+    clients.append(client)
+
+    for msg in msglist:
+        client.send(msg)
+
+    broadcast(f'<{alias} has joined the chat>')
+
+    while True:
+        try:
+            msg = client.recv(255).decode('utf-8')
+            index = clients.index(client)
+            alias = aliases[index]
+            broadcast(f"<{alias}>: {msg}")
+            #add to file so can be displayed on webpage
+        except:
+            index = clients.index(client)
+            clients.remove(client)
+            client.close()
+            alias = aliases[index]
+            broadcast(f"<{alias} has left the chat>")
+            aliases.remove(alias)
+            break
+
+def receice_app_client():
+    while True:
+        client, address = server.accept()
+        thread = threading.Thread(target=handle_client, args=(client,))
+        thread.start()
+
 if __name__ == "__main__":
+    thread = threading.Thread(target=receice_app_client)
+    thread.start()
     app.run(debug=True, host="0.0.0.0", port="80")
