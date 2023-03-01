@@ -54,7 +54,7 @@ def jams():
 def ai():
     return render_template("ai.html")
 
-host = "127.0.0.1"
+host = "0.0.0.0"
 port = 443
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -104,4 +104,4 @@ def receice_app_client():
 if __name__ == "__main__":
     thread = threading.Thread(target=receice_app_client)
     thread.start()
-    app.run(debug=True, host="127.0.0.1", port="80")
+    app.run(debug=True, host="0.0.0.0", port="80")
