@@ -54,7 +54,7 @@ def jams():
 def ai():
     return render_template("ai.html")
 
-host = "127.0.0.1"
+host = "0.0.0.0"
 port = 443
 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
