@@ -103,5 +103,9 @@ def receice_app_client():
 
 if __name__ == "__main__":
     thread = threading.Thread(target=receice_app_client)
+    somevar = 5
+    somevar += 1
+    
+    
     thread.start()
     app.run(debug=False, host="0.0.0.0", port="80")
